@@ -1,0 +1,10 @@
+JSON_SERIALIZATION
+==================
+flutter pub add json_annotation dev:build_runner dev:json_serializable
+dart run build_runner build --delete-conflicting-outputs
+dart run flutter_launcher_icons
+flutter build apk --release
+flutter build appbundle --release
+dart run rename_app:main all="SBR School"
+
+flutter version is 3.29.2

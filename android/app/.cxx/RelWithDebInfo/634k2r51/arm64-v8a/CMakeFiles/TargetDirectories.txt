@@ -1,0 +1,2 @@
+C:/Users/Deepak/Documents/Decora_2024_Flutter/Decora_Admin/android/app/.cxx/RelWithDebInfo/634k2r51/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Deepak/Documents/Decora_2024_Flutter/Decora_Admin/android/app/.cxx/RelWithDebInfo/634k2r51/arm64-v8a/CMakeFiles/rebuild_cache.dir

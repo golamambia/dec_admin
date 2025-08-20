@@ -1,0 +1,299 @@
+{
+  "project_info": {
+    "project_number": "817242233313",
+    "firebase_url": "https://sms-push-notification-ff543-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sms-push-notification-ff543",
+    "storage_bucket": "sms-push-notification-ff543.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:80f181eb123b03d9521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:45e748f7e9ba29f1521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.parent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:85961d190dee18d4521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.principal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:26036e32acafa900521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:81b75e219ab9b9a7521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.sms_parent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:b78cc0d161e4d2b5521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.smsparent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:baa49e1c93ccc7a8521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.smsteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817242233313:android:f12b57133fcb070d521aa0",
+        "android_client_info": {
+          "package_name": "com.decora.teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfkVEsTdz2Dl5lchw5JMpZL_tniZpqWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817242233313-gvhfqd6jgg979emrn8qfhq59dt68bciv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817242233313-0cnqiep856crh4v0tcejl39q5gloor64.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.decora.smsparent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

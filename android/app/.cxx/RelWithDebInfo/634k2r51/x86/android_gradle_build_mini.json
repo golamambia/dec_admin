@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Deepak\\Documents\\sdk\\3.13.4-stable\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Deepak\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Deepak\\Documents\\Decora_2024_Flutter\\Decora_Admin\\android\\app\\.cxx\\RelWithDebInfo\\634k2r51\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Deepak\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Deepak\\Documents\\Decora_2024_Flutter\\Decora_Admin\\android\\app\\.cxx\\RelWithDebInfo\\634k2r51\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
