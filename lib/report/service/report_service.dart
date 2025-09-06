@@ -8,15 +8,17 @@ import 'package:decora_admin/util/end_points.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:intl/intl.dart';
 
 import '../../util/Ams.dart';
  
 
 class ReportService extends GetxService {
 
-Future<bool> postDownloadReport({
+Future<bool> postDownloadReport3({
   required String fromDate,
-  required String toDate,
+  required String toDate, String? type,
 }) async {
   EasyLoading.show(status: "Downloading...");
 
@@ -53,37 +55,58 @@ Future<bool> postDownloadReport({
 }
 
 
- Future<bool> postDownloadReport2(
+ Future<bool> postDownloadReport(
       {required String fromDate,
-      required String toDate
+      required String toDate,
+     String? type,
  
 }) async {
     EasyLoading.show();
-
+String formattedFromDate =
+      DateFormat("yyyy-MM-dd").format(DateFormat("dd-MM-yyyy").parse(fromDate));
+  String formattedToDate =
+      DateFormat("yyyy-MM-dd").format(DateFormat("dd-MM-yyyy").parse(toDate));
     var data= {
       "school_code": CommonService.schoolCode,
       "SessionID": CommonService.currentSessionId,
       "BranchID": CommonService.branchId,
-      "EmpID": CommonService.employeeId,
-       
-      "OnlineClassID": "0",
+ 
+"SP": "Notification",
+"type": type,
+ 
+"CreatedBy": "",
+"Class": "",
+"From_date": formattedFromDate,
+    "To_date": formattedToDate,
+"UserID": "",
+"ExamId": "",
+"Date": "",
+"SubjectID": "",
+"MobileNo": "",
+"ClassID": "",
+"InstallmentID": "",
+"CurDate": ""
  
     };
     try {
       final response = await Dio().post(
-        EndPoints.OnlineClassUpdate,
+        EndPoints.ReportDownloadInfo,
         options: Options(
           headers: {HttpHeaders.authorizationHeader: EndPoints.auth},
         ),
         data:data,
       );
- 
-      Get.log("update OnlineCls : $response");
-      Get.log("update OnlineCls : ${data.toString()}");
-      EasyLoading.dismiss();
+  
+  print("Decoded Data: $response");
 
+      Get.log("ReportDownloadInfo : $response");
+      Get.log("ReportDownloadInfo : ${data.toString()}");
+      EasyLoading.dismiss();
+ 
       if (response.data["status"]) {
-        Ams.ft("Saved Online Class successfully");
+        String fileUrl = "https://newappapi.decorainfotech.in${response.data["message"]}";
+  await downloadReport(fileUrl);
+        Ams.ft("Report downloaded successfully");
         return true;
       } else {
         Ams.ft("${response.data["message"]}");
@@ -98,6 +121,29 @@ Future<bool> postDownloadReport({
     return false;
   }
 
+Future<void> downloadReport(String fileUrl) async {
+  try {
+    var dio = Dio();
 
+    // Get app's document directory
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    String savePath = "${appDocDir.path}/report.xlsx";
+
+    // Start download
+    await dio.download(
+      fileUrl,
+      savePath,
+      onReceiveProgress: (received, total) {
+        if (total != -1) {
+          print("Download Progress: ${(received / total * 100).toStringAsFixed(0)}%");
+        }
+      },
+    );
+
+    print("File saved at: $savePath");
+  } catch (e) {
+    print("Download error: $e");
+  }
+}
 
 }

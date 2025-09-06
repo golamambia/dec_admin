@@ -44,55 +44,12 @@ class Report extends GetView<AttendanceController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       SizedBox(
-            //           width: MediaQuery.of(context).size.width / 2 - 20,
-            //           child: SingleSelectCls(
-            //               clsId: controller.clsId,
-            //               label: "Select Class",
-            //               clsCallBack: controller.clsCallback)),
-            //       SizedBox(
-            //           width: MediaQuery.of(context).size.width / 2 - 20,
-            //           child: BuildDateTextFormField(
-            //               controller: controller.currentDate,
-            //               label: "Select Date",
-            //               callBack: controller.dateCallBack)),
-            //     ],
-            //   ),
-            // ),
             
-            // Padding(
-            //   padding:
-            //       const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
-            //   child: Container(
-            //     width: double.infinity,
-            //     decoration: BoxDecoration(color: ColorManager.primary),
-            //     child: Text(
-            //       "Student Report",
-            //       textAlign: TextAlign.center,
-            //       style: getMFStyle(
-            //           color: ColorManager.white, fontSize: FontSize.s18),
-            //     ),
-            //   ),
-            // ),
-            //TODO:Make this dynamic
-            // _buildAttendanceCard(
-            //     name: "Raju Shaw",
-            //     fatherName: "S K Narayan Shaw",
-            //     typeId: 1.obs),
 
             StreamBuilder(
               stream: controller.attendanceModel.stream,
               builder: (context, snapshot) {
-                // if (snapshot.data == null ||
-                //     snapshot.data!.records == null ||
-                //     snapshot.data!.records!.isEmpty) {
-                //   return SizedBox(height:100.h,child: Center(child: Text("Please select class and Date")));
-                // }
+                
                 return ListView.builder(
                   itemCount: snapshot.data?.records?.length ?? 0,
                   shrinkWrap: true,
@@ -114,141 +71,227 @@ class Report extends GetView<AttendanceController> {
             SizedBox(
               height: 10.h,
             ),
-            Row(
+           Align(
+  alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  
+                  Padding(
+                    padding:  const EdgeInsets.only(left: 12.0),
+                    child: Text(
+                      "Notification",
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    
+                    ElevatedButton(
+                      onPressed: () {
+                         Get.to(() => ReportDownload(title: "Notification Date Wise Report",type:'DateWise'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(4.0),
+                          backgroundColor: ColorManager.blue,
+                          minimumSize: Size(120.w, 120.h),
+                          shape:  const CircleBorder()),
+                       child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
-                ElevatedButton(
-                  onPressed: () {
-                     Get.to(() => ReportDownload(title: "Notification Date Wise Report"));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Date Wise",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
+              children: const [
+                Icon(Icons.calendar_today, color: Colors.white, size: 28),
+                SizedBox(height: 8),
+                Text(
+                  "Date Wise",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                 ElevatedButton(
-                  onPressed: () {
-                    Get.to(() => ReportDownload(title: "Notification Class Report",type:'class_report'));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Class Wise",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-
-                ElevatedButton(
-                  onPressed: () {
-                    //controller.isSMS=1;
-                    //controller.onSave();
-                    Get.to(() => ReportDownload(title: "Notification Student Report",type:'student_report'));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Student Wish",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
-                ),
-
-
-      
-
               ],
             ),
-            SizedBox(
-              height: 10.h,
-            ),
-Row(
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                     ElevatedButton(
+                      onPressed: () {
+                        Get.to(() => ReportDownload(title: "Notification Class Report",type:'class_report'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(4.0),
+                          backgroundColor: ColorManager.blue,
+                          minimumSize: Size(120.w, 120.h),
+                          shape:  const CircleBorder()),
+                       child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
-                ElevatedButton(
-                  onPressed: () {
-                  Get.to(() => ReportDownload(title: "Notification Teacher Report",type:'teacher_report'));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Teacher Wise",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
+              children: const [
+                Icon(Icons.class_sharp, color: Colors.white, size: 28),
+                SizedBox(height: 8),
+                Text(
+                  "Class Wise",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                 ElevatedButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Report B",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-
-                ElevatedButton(
-                  onPressed: () {
-                    controller.isSMS=1;
-                    controller.onSave();
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(4.0),
-                      backgroundColor: ColorManager.blue,
-                      minimumSize: Size(110.w, 80.h),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6))),
-                  child: Text(
-                    "Report C",
-                    style: getMFStyle(
-                        color: ColorManager.white, fontSize: FontSize.s14),
-                  ),
-                ),
-
- 
-
               ],
-            )
+            ),
+                    ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                
+                    ElevatedButton(
+                      onPressed: () {
+                        //controller.isSMS=1;
+                        //controller.onSave();
+                        Get.to(() => ReportDownload(title: "Notification Student Report",type:'student_report'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(4.0),
+                          backgroundColor: ColorManager.blue,
+                         minimumSize: Size(120.w, 120.h),
+                          shape:  const CircleBorder()),
+                       child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.person, color: Colors.white, size: 32),
+                SizedBox(height: 8),
+                Text(
+                  "Student Wise",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ],
+            ),
+                    ),
+                SizedBox(
+                      width: 10.w,
+                    ),
+                
+                      ElevatedButton(
+                      onPressed: () {
+                      Get.to(() => ReportDownload(title: "Notification Teacher Report",type:'teacher_report'));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(4.0),
+                          backgroundColor: ColorManager.blue,
+                          minimumSize: Size(120.w, 120.h),
+                          shape:  const CircleBorder()),
+                      child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.person, color: Colors.white, size: 32),
+                SizedBox(height: 8),
+                Text(
+                  "Teacher Wise",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ],
+            ),
+                    ),
+                
+                  ],
+                ),
+              ),
+            ),
+             
+             Align(
+  alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  
+                  Padding(
+                    padding:  const EdgeInsets.only(left: 12.0,bottom: 4.0,top:8.0),
+                    child: Text(
+                      "Substitution",
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+Padding(
+  padding: const EdgeInsets.all(12.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    
+    children: [
+      // First Box
+      Expanded(
+        flex: 1, // each takes 50%
+        child: GestureDetector(
+          onTap: () {
+            Get.to(() => ReportDownload(title: "Absent Substitution"));
+          },
+          child: Container(
+            height: 90.h,
+            margin: const EdgeInsets.only(right: 8), // spacing between boxes
+            decoration: BoxDecoration(
+              color: ColorManager.blue,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.person, color: Colors.white, size: 32),
+                SizedBox(height: 8),
+                Text(
+                  "Absent Substitution",
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+  
+      // Second Box
+      Expanded(
+        flex: 1, // also 50%
+        child: GestureDetector(
+          onTap: () {
+            Get.to(() => ReportDownload(title: "Substitution"));
+          },
+          child: Container(
+            height: 90.h,
+            margin: const EdgeInsets.only(left: 8),
+            decoration: BoxDecoration(
+              color: ColorManager.blue,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.person, color: Colors.white, size: 32),
+                SizedBox(height: 8),
+                Text(
+                  "Substitution",
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+
+
           ],
         ),
       ),

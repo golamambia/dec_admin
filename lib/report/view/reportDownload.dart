@@ -93,7 +93,7 @@ class ReportDownload extends StatelessWidget {
 
             // Download button
             Padding(
-              padding: const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0,bottom: 40),
+              padding: const EdgeInsets.only(top: 110.0, right: 10.0, left: 10.0,bottom: 40),
               child: InkWell(
                 onTap: () {
                   // Call your download function here

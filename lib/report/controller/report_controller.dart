@@ -16,6 +16,7 @@ var attendanceClr = Get.find<AttendanceController>();
 
  var fromDate = TextEditingController();
   var toDate = TextEditingController();
+   var type = TextEditingController();
   var selectedClassId = "".obs;
 
    void setClassId(String? clsId) {
@@ -27,7 +28,7 @@ var attendanceClr = Get.find<AttendanceController>();
   }
 
 
- void onClickDownload(String? type) async {
+ void onClickDownload(String? typeval) async {
   if (type == 'class_report' && clsController.classIds.isEmpty) {
   Ams.ft("Please select class");
   return;
@@ -52,6 +53,7 @@ if (toDate.text.isEmpty) {
 final result = await ReportService().postDownloadReport(
   fromDate: fromDate.text,
   toDate: toDate.text,
+  type:typeval,
 );
 
 if (result) {
@@ -59,11 +61,11 @@ if (result) {
 } else {
    
 }
-  // print("📅 From Date: ${fromDate.text}");
-  // print("📅 To Date: ${toDate.text}");
-  //  print("📘 Class ID: ${selectedClassId.value}");
-  //  print("📘 clsController Class ID: ${clsController.classIds.value}");
-  //  print("📘 employeeController Class ID: ${employeeController.empIds.value}");
+  print("📅 From Date: ${fromDate.text}");
+  print("📅 To Date: ${toDate.text}");
+   //print("📘 Class ID: ${selectedClassId.value}");
+  // print("📘 clsController Class ID: ${clsController.classIds.value}");
+   //print("📘 employeeController Class ID: ${employeeController.empIds.value}");
   
  
 }

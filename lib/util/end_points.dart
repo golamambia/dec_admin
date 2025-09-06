@@ -70,7 +70,7 @@ class EndPoints {
 
   static const String ChatEmpList = "$baseUrl/get_Parent_Emp_List";
   static const String EditChat= "$baseUrl/Edit_Chat";
-
+  static const String ReportDownloadInfo= "$baseUrl/Reports";
 
 
 
